@@ -105,4 +105,49 @@ public class UserAuthService {
         }
         return buyerList;
     }
+
+    public List<User> getAllVendorsSortedByPrice() throws IOException {
+        List<User> vendorList = new LinkedList<>(); // Use LinkedList instead of ArrayList
+
+        try {
+            System.out.println("Reading user config...");
+            JsonObject rootObject = readUserConfig();
+            JsonArray users = rootObject.getAsJsonArray("users");
+
+            for (int i = 0; i < users.size(); i++) {
+                JsonObject userJson = users.get(i).getAsJsonObject();
+                String userType = userJson.get("userType").getAsString();
+                if ("VENDOR".equalsIgnoreCase(userType)) {
+                    User user = gson.fromJson(userJson, User.class);
+                    vendorList.add(user); // dynamically add to LinkedList
+                }
+            }
+
+            // Bubble Sort on LinkedList
+            int n = vendorList.size();
+            for (int i = 0; i < n - 1; i++) {
+                boolean swapped = false;
+                for (int j = 0; j < n - i - 1; j++) {
+                    // Use get() because LinkedList still supports random access via index
+                    int price1 = Integer.parseInt(vendorList.get(j).getVendorDetails().getPrice());
+                    int price2 = Integer.parseInt(vendorList.get(j + 1).getVendorDetails().getPrice());
+
+                    if (price1 > price2) {
+                        // Swap elements
+                        User temp = vendorList.get(j);
+                        vendorList.set(j, vendorList.get(j + 1));
+                        vendorList.set(j + 1, temp);
+                        swapped = true;
+                    }
+                }
+                if (!swapped) break; // Optimization: stop if already sorted
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new IOException("Failed to read vendors: " + e.getMessage(), e);
+        }
+
+        return vendorList;
+    }
 }
