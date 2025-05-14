@@ -150,4 +150,27 @@ public class UserAuthService {
 
         return vendorList;
     }
+
+    public boolean deleteVendorByUsername(String username) throws IOException {
+        try {
+            String content = new String(Files.readAllBytes(Paths.get(DATA_FILE_ABSOLUTE)));
+            JsonObject rootObject = gson.fromJson(content, JsonObject.class);
+            JsonArray users = rootObject.getAsJsonArray("users");
+
+            for (int i = 0; i < users.size(); i++) {
+                JsonObject userJson = users.get(i).getAsJsonObject();
+                if (userJson.get("username").getAsString().equals(username)
+                        && "VENDOR".equalsIgnoreCase(userJson.get("userType").getAsString())) {
+                    users.remove(i);
+                    rootObject.addProperty("lastUpdated", getCurrentTimestamp());
+                    Files.write(Paths.get(DATA_FILE_ABSOLUTE), gson.toJson(rootObject).getBytes());
+                    return true;
+                }
+            }
+            return false;
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new IOException("Failed to delete vendor: " + e.getMessage());
+        }
+    }
 }
