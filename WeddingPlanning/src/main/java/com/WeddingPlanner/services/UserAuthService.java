@@ -83,4 +83,26 @@ public class UserAuthService {
             throw new IOException("Failed to register user: " + e.getMessage());
         }
     }
+
+    public List<User> getAllBuyers() throws IOException {
+        List<User> buyerList = new ArrayList<>();
+        try {
+            System.out.println("Reading user config...");
+            JsonObject rootObject = readUserConfig();
+            JsonArray users = rootObject.getAsJsonArray("users");
+
+            for (int i = 0; i < users.size(); i++) {
+                JsonObject userJson = users.get(i).getAsJsonObject();
+                String userType = userJson.get("userType").getAsString();
+                if ("BUYER".equalsIgnoreCase(userType)) {
+                    User user = gson.fromJson(userJson, User.class);
+                    buyerList.add(user);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new IOException("Failed to read buyers: " + e.getMessage(), e);
+        }
+        return buyerList;
+    }
 }
