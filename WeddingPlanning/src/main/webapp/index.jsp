@@ -1,3 +1,4 @@
+//IT24103989
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -6,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeegaLK | Wedding Planner</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --primary: #ff6b6b;
@@ -244,16 +246,16 @@
             font-weight: 500;
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  
+
     <nav class="nav-bar">
         <div class="nav-content">
             <a href="#" class="logo">DeegaLK</a>
             <div class="auth-buttons">
                 <a href="login.jsp" class="btn btn-login">Login</a>
                 <a href="signup.jsp" class="btn btn-signup">Sign Up</a>
+                <a href="admin-login.jsp" class="btn btn-login">Admin Login</a>
             </div>
         </div>
     </nav>
@@ -275,7 +277,6 @@
                 <h3 class="service-title">Wedding Planning</h3>
                 <p class="service-description">Comprehensive planning services from venue selection to day-of coordination.</p>
             </div>
-
             <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-glass-cheers"></i>
@@ -283,7 +284,6 @@
                 <h3 class="service-title">Vendor Management</h3>
                 <p class="service-description">Access our network of trusted vendors and let us handle all the coordination.</p>
             </div>
-
             <div class="service-card">
                 <div class="service-icon">
                     <i class="fas fa-palette"></i>
@@ -291,8 +291,6 @@
                 <h3 class="service-title">Design & Styling</h3>
                 <p class="service-description">Create your perfect wedding aesthetic with our expert design services.</p>
             </div>
-
-          
         </div>
     </section>
 
@@ -301,7 +299,7 @@
     </footer>
 
     <script>
-        // Smooth scrolling for anchor links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -311,7 +309,7 @@
             });
         });
 
-        // Animate service cards on scroll
+        // Animate service cards
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {

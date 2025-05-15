@@ -1,3 +1,4 @@
+//IT24103989
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -355,6 +356,11 @@
                 <div class="form-group">
                     <label class="form-label">Contact Number</label>
                     <input type="tel" class="form-input" name="contactNumber">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Price Range</label>
+                    <input type="text" class="form-input" name="Price">
                 </div>
 
                 <div class="form-group">
