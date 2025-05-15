@@ -1,0 +1,163 @@
+{
+  "users": [
+    {
+      "username": "Krishmal2004",
+      "password": "password123",
+      "email": "krishmal@example.com",
+      "firstName": "Krishmal",
+      "lastName": "Kumar",
+      "dateRegistered": "2025-04-26 21:27:52",
+      "lastLogin": "2025-04-26 21:47:41",
+      "status": "active",
+      "userType": "VENDOR",
+      "registeredBy": "system",
+      "vendorDetails": {
+        "businessName": "Krishmal Photography",
+        "businessType": "PHOTOGRAPHY",
+        "description": "Professional photography services",
+        "contactNumber": "1234567890",
+        "Price": "70000",
+        "services": [
+          "photography",
+          "videography"
+        ],
+        "rating": 4.8,
+        "reviewCount": 25
+      }
+    },
+    {
+      "username": "kri456",
+      "password": "123456",
+      "email": "krish12@gmail.com",
+      "firstName": "Krishmal",
+      "lastName": "Dinidu",
+      "dateRegistered": "2025-04-26 21:27:52",
+      "lastLogin": "2025-04-26 21:27:52",
+      "status": "active",
+      "userType": "BUYER",
+      "registeredBy": "Krishmal2004"
+    },
+    {
+      "username": "kala123",
+      "password": "123456",
+      "email": "kala@gmail.com",
+      "firstName": "kala",
+      "lastName": "kri",
+      "dateRegistered": "2025-04-26 21:27:52",
+      "lastLogin": "2025-04-26 21:47:41",
+      "status": "active",
+      "userType": "VENDOR",
+      "registeredBy": "Krishmal2004",
+      "vendorDetails": {
+        "businessName": "Hii",
+        "businessType": "CATERING",
+        "description": "hii",
+        "contactNumber": "123456789",
+        "Price": "20000",
+        "services": [
+          "photography",
+          "catering"
+        ],
+        "rating": 0.0,
+        "reviewCount": 0
+      }
+    },
+    {
+      "username": "sajan",
+      "password": "123456",
+      "email": "sajansandaru25@gmail.com",
+      "firstName": "sajan",
+      "lastName": "5466",
+      "dateRegistered": "2025-04-26 21:47:41",
+      "lastLogin": "2025-04-26 21:47:41",
+      "status": "active",
+      "userType": "BUYER",
+      "registeredBy": "Krishmal2004"
+    },
+    {
+      "username": "uthuu",
+      "password": "123456",
+      "email": "uththararasindi007@gmail.com",
+      "firstName": "uththara",
+      "lastName": "rasindi",
+      "dateRegistered": "2025-04-26 21:47:41",
+      "lastLogin": "2025-04-26 21:47:41",
+      "status": "active",
+      "userType": "BUYER",
+      "registeredBy": "Krishmal2004"
+    },
+    {
+      "username": "sathindu",
+      "password": "123456",
+      "email": "sathindusuhansha@gmail.com",
+      "firstName": "sathindu",
+      "lastName": "suhansha",
+      "dateRegistered": "2025-04-26 21:47:41",
+      "lastLogin": "2025-04-26 21:47:41",
+      "status": "active",
+      "userType": "VENDOR",
+      "registeredBy": "Krishmal2004",
+      "vendorDetails": {
+        "businessName": "sathiya",
+        "businessType": "PHOTOGRAPHY",
+        "description": "yooow",
+        "contactNumber": "0761203458",
+        "Price": "40000",
+        "services": [
+          "photography",
+          "videography"
+        ],
+        "rating": 0.0,
+        "reviewCount": 0
+      }
+    },
+    {
+      "username": "binuk",
+      "password": "123456",
+      "email": "binukvindul@gmail.com",
+      "firstName": "binuk",
+      "lastName": "vindul",
+      "dateRegistered": "2025-04-26 21:47:41",
+      "lastLogin": "2025-04-26 21:47:41",
+      "status": "active",
+      "userType": "BUYER",
+      "registeredBy": "Krishmal2004"
+    },
+    {
+      "username": "Ranger",
+      "password": "123456",
+      "email": "rangergunarathna@gmail.com",
+      "firstName": "Ranger",
+      "lastName": "Gunarathna",
+      "dateRegistered": "2025-04-26 21:47:41",
+      "lastLogin": "2025-04-26 21:47:41",
+      "status": "active",
+      "userType": "BUYER",
+      "registeredBy": "Krishmal2004"
+    },
+    {
+      "username": "Nimsara",
+      "password": "123456",
+      "email": "sathindusuhansha@gmail.com",
+      "firstName": "nimsara",
+      "lastName": "gunarathna",
+      "dateRegistered": "2025-05-13 11:45:15",
+      "status": "active",
+      "userType": "VENDOR",
+      "registeredBy": "IT24103989",
+      "vendorDetails": {
+        "businessName": "Nimsara",
+        "businessType": "MUSIC",
+        "description": "yoo",
+        "contactNumber": "0761203991",
+        "services": [
+          "music"
+        ],
+        "Price": "50000",
+        "rating": 0.0,
+        "reviewCount": 0
+      }
+    }
+  ],
+  "lastUpdated": "2025-05-13 18:37:49"
+}
