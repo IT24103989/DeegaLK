@@ -1,3 +1,4 @@
+//IT24103989
 package com.WeddingPlanner.model;
 
 public class User {
@@ -13,7 +14,7 @@ public class User {
     private String registeredBy;
     private VendorDetails vendorDetails;
 
-    // Constructor
+   
     public User () {
     	
     }
@@ -31,7 +32,7 @@ public class User {
     	this.registeredBy = registeredBy;
     }
 
-    // All getters and setters
+    
     public String getUsername() {
         return username;
     }

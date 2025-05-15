@@ -1,3 +1,4 @@
+//IT24103989
 package com.WeddingPlanner.model;
 
 public class VendorDetails {
@@ -6,10 +7,12 @@ public class VendorDetails {
     private String description;
     private String contactNumber;
     private String[] services;
+    private String Price;
     private double rating;
     private int reviewCount;
 
-    // Getters and setters
+   
+    
     public String getBusinessName() {
         return businessName;
     }
@@ -64,5 +67,13 @@ public class VendorDetails {
 
     public void setReviewCount(int reviewCount) {
         this.reviewCount = reviewCount;
+    }
+    
+    public String getPrice() {
+    	return Price;
+    }
+    
+    public void setPrice(String Price) {
+    	this.Price = Price;
     }
 }
