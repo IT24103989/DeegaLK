@@ -37,6 +37,8 @@ public class UserLoginServlet extends HttpServlet {
                 if ("VENDOR".equals(user.getUserType()) && user.getVendorDetails() != null) {
                     session.setAttribute("businessName", user.getVendorDetails().getBusinessName());
                     session.setAttribute("businessType", user.getVendorDetails().getBusinessType());
+                    session.setAttribute("ContactNumber", user.getVendorDetails().getContactNumber());
+                    session.setAttribute("Description", user.getVendorDetails().getDescription());
                 }
                 
                 response.sendRedirect("VENDOR".equals(user.getUserType()) ? 

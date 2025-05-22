@@ -32,6 +32,29 @@ public class UserAuthService {
         this.servletContext = servletContext;
     }
 
+    public User getUserByUsername(String username, ServletContext context) {
+        try {
+            if (this.servletContext == null) {
+                this.servletContext = context;
+            }
+            
+            JsonObject rootObject = readUserConfig();
+            JsonArray users = rootObject.getAsJsonArray("users");
+
+            for (int i = 0; i < users.size(); i++) {
+                JsonObject userJson = users.get(i).getAsJsonObject();
+                String storedUsername = userJson.get("username").getAsString();
+                
+                if (storedUsername.equals(username)) {
+                    return gson.fromJson(userJson, User.class);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public User authenticateUser(String username, String password, ServletContext context) throws IOException {
         this.servletContext = context;
         try {
@@ -175,7 +198,6 @@ public class UserAuthService {
         return vendorList;
     }
 
-
     public boolean deleteVendorByUsername(String username) throws IOException {
         try {
             String content = new String(Files.readAllBytes(Paths.get(DATA_FILE_ABSOLUTE)));
@@ -221,7 +243,6 @@ public class UserAuthService {
             throw new IOException("Failed to delete buyer: " + e.getMessage());
         }
     }
-
 
     private JsonObject readUserConfig() {
         try {
