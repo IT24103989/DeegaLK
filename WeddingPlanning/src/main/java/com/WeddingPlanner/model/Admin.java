@@ -1,9 +1,10 @@
+//IT24103811
 package com.WeddingPlanner.model;
 
 public class Admin {
     private String username;
     private String password;
-    // Additional admin fields like name, email, etc.
+    
 
     public Admin() {
     }
